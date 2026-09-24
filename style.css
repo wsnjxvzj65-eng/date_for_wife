@@ -1,0 +1,164 @@
+body {
+    background: #ffe6f0;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+    box-sizing: border-box;
+
+    overflow: hidden;
+}
+
+.card {
+    background: white;
+    width: 90%;
+    max-width: 550px;
+    padding: 50px 25px;
+    border-radius: 30px;
+    text-align: center;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+
+    animation: cardAppear 0.6s ease;
+}
+
+.hidden {
+    display: none;
+}
+
+.heart {
+    font-size: 80px;
+    margin-bottom: 20px;
+
+    animation: heartBeat 1.5s infinite;
+}
+
+h1 {
+    color: #d6336c;
+    font-size: 42px;
+    margin-bottom: 25px;
+}
+
+p {
+    color: #555;
+    font-size: 26px;
+    margin-bottom: 30px;
+}
+
+button {
+    display: block;
+    width: 85%;
+
+    background: #ff4d88;
+    color: white;
+
+    border: none;
+    padding: 18px;
+    margin: 12px auto;
+
+    border-radius: 18px;
+
+    font-size: 22px;
+    font-weight: bold;
+
+    transition: 0.2s ease;
+}
+
+button:hover {
+    background: #e63e76;
+    transform: scale(1.03);
+}
+
+button:active {
+    transform: scale(0.96);
+}
+
+.selected {
+    background: #c92d60;
+    transform: scale(1.03);
+}
+
+
+/* Появление карточки */
+
+@keyframes cardAppear {
+
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+
+}
+
+
+/* Анимация сердечка */
+
+@keyframes heartBeat {
+
+    0% {
+        transform: scale(1);
+    }
+
+    15% {
+        transform: scale(1.15);
+    }
+
+    30% {
+        transform: scale(1);
+    }
+
+    45% {
+        transform: scale(1.1);
+    }
+
+    60% {
+        transform: scale(1);
+    }
+
+}
+
+
+/* Летающие сердечки */
+
+.floating-heart {
+
+    position: fixed;
+
+    bottom: -50px;
+
+    font-size: 30px;
+
+    pointer-events: none;
+
+    animation: floatHeart 4s linear forwards;
+
+}
+
+
+@keyframes floatHeart {
+
+    0% {
+        opacity: 0;
+        transform: translateY(0) rotate(0deg);
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(-110vh) rotate(360deg);
+    }
+
+}
